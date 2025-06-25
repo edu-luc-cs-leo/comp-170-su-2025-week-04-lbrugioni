@@ -1,4 +1,56 @@
+#Longest word testing
+def longest_word(words:list[str])->str:
+  longest=None
+  if words is not None and len(words)>0:
+    longest=words[0]
+    for word in words:
+      if len(word)>len(longest):
+        longest=word
+  return longest
 
+#Shortest word testing
+#This function returns the shortest word in the list
+def shortest_word(words:list[str])->str:
+  shortest=None
+  if words is not None and len(words)>0:
+    shortest=words[0]
+    for word in words:
+      if len(word)<len(shortest):
+        shortest=word
+  return shortest
+
+#Odd word testing
+def odd_words(words:list[str])->list[str]:
+  result=None
+  if words is not None and len(words)>0:
+    result=[]
+    for word in words:
+      if len(word)%2==1:
+        result.append(word)
+  return result
+
+#Average word testing
+def average_words(words:list[str])->list[str]:
+  result=None
+  if words is not None and len(words)>0:
+    total=0
+    for word in words:
+      total+=len(word)
+      average=total/len(words)
+      result=[]
+      for word in words:
+        if abs(len(word)-average)<=1:
+          result.append(word)
+  return result
+
+#Intersect word testing
+def intersect(foo:list[str],bar:list[str])->bool:
+  match=False
+  if foo is not None and bar is not None and len(foo)>0 and len(bar)>0:
+    for word in foo:
+      if word in bar:
+        match=True
+  return match 
 
 #--------------------------------------------------------------------------------#
 # ⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎  WRITE YOUR CODE ABOVE THIS  LINE ⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎
@@ -51,7 +103,8 @@ if __name__ == "__main__":
     print("longest_word FAILS length test")
   else:
     print("longest_word passes length test")
-  
+  #Find longest word in list
+
   # -------- Testing
   print("\nTesting odd_words")
   if odd_words(testF) is not None:
