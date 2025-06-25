@@ -1,16 +1,19 @@
-#Longest word testing
+#Find the longest word in the lsit 
 def longest_word(words:list[str])->str:
+  #start with no word chosen yet 
   longest=None
   if words is not None and len(words)>0:
+    #assume first word is the longest in the beginning 
     longest=words[0]
+    #checks every word in the list 
     for word in words:
       if len(word)>len(longest):
         longest=word
   return longest
 
-#Shortest word testing
-#This function returns the shortest word in the list
+#Find the shortest word in the list 
 def shortest_word(words:list[str])->str:
+  #start with no word chosen yet 
   shortest=None
   if words is not None and len(words)>0:
     shortest=words[0]
@@ -19,8 +22,9 @@ def shortest_word(words:list[str])->str:
         shortest=word
   return shortest
 
-#Odd word testing
+#Find the odd word in the list 
 def odd_words(words:list[str])->list[str]:
+  #start with no word chosen yet 
   result=None
   if words is not None and len(words)>0:
     result=[]
@@ -29,8 +33,10 @@ def odd_words(words:list[str])->list[str]:
         result.append(word)
   return result
 
-#Average word testing
+#Find the average word testing
+#Function finds the word closest to the average word length 
 def average_words(words:list[str])->list[str]:
+  #start with no word chosen yet 
   result=None
   if words is not None and len(words)>0:
     total=0
@@ -43,8 +49,10 @@ def average_words(words:list[str])->list[str]:
           result.append(word)
   return result
 
-#Intersect word testing
+#Find the Intersect word
+#Function finds if a word appears in both lists 
 def intersect(foo:list[str],bar:list[str])->bool:
+  #start with no commone words found 
   match=False
   if foo is not None and bar is not None and len(foo)>0 and len(bar)>0:
     for word in foo:
